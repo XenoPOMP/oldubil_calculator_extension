@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "oldubil-calculator-extension",
+  "description": "Calculate cost of buying liras on Odlubil exchange service.",
+  "version": "0.0.0",
+  "default_locale": "en",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": [],
+  "optional_permissions": [],
+  "host_permissions": [],
+  "optional_host_permissions": []
+}

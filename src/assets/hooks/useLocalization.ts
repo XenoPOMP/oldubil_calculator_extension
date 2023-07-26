@@ -1,16 +1,17 @@
-import { enUS } from '@locales/en-US';
-import { ruRU } from '@locales/ru-RU';
-import { Localization } from '@localization/Localization';
-
-import useAppSettings from '@hooks/useAppSettings';
+import {
+  I18Locales,
+  Localization,
+  getChromeLocale
+} from '@localization/I18Locales';
 
 export const useLocalization = (): Localization => {
-  const { language } = useAppSettings();
+  const wrapLocale = (key: keyof I18Locales) => {
+    return {
+      [key]: getChromeLocale(key)
+    };
+  };
 
-  switch (language.get()) {
-    case 'en':
-      return enUS;
-    case 'ru':
-      return ruRU;
-  }
+  return {
+    ...wrapLocale('localeName')
+  };
 };

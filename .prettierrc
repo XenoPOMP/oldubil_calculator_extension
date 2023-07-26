@@ -6,6 +6,7 @@
   "semi": true,
   "useTabs": false,
   "arrowParens": "avoid",
+  "trailingComma": "none",
   "importOrder": [
     "^@xenopomp/(.*)$",
     "<THIRD_PARTY_MODULES>",
