@@ -1,0 +1,48 @@
+@import "src/assets/styles/templates";
+
+section.currencyInput {
+  font-size: 1em; // 1em = 20px
+  display: flex;
+  flex-direction: column;
+  gap: .6em;
+
+  h2 {
+    @extend %bold;
+    @extend %notSelectable;
+
+    font-size: 1em;
+  }
+
+  article.input {
+    width: 100%;
+    height: 1.7em;
+    border-radius: .25em;
+    background: var(--back-secondary);
+    overflow: hidden;
+    display: flex;
+    container-type: inline-size;
+
+    .iconBlock {
+      @extend %flexCenter;
+      @extend %notSelectable;
+
+      height: 100%;
+      aspect-ratio: 1;
+      background: var(--back-third);
+    }
+
+    input {
+      width: calc(100cqw - 1.7em);
+      height: 100%;
+      background: none !important;
+      padding: .25em .5em !important;
+      border: none !important;
+      outline: none !important;
+
+      & + b,
+      & + b + b {
+        display: none !important;
+      }
+    }
+  }
+}

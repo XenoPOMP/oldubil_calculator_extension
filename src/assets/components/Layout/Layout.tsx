@@ -1,9 +1,11 @@
+import { PropsWith } from '@xenopomp/advanced-types';
+
+import cn from 'classnames';
 import { FC } from 'react';
 
 import GlobalProvider from '@providers/GlobalProvider/GlobalProvider';
 
-import { PropsWith } from '@type/PropsWith';
-
+import styles from './Layout.module.scss';
 import { LayoutProps } from './Layout.props';
 
 /**
@@ -15,7 +17,9 @@ import { LayoutProps } from './Layout.props';
 const Layout: FC<PropsWith<'children', LayoutProps>> = ({ children }) => {
   return (
     <GlobalProvider>
-      <main>{children}</main>
+      <div className={cn(styles.layout)}>
+        <main>{children}</main>
+      </div>
     </GlobalProvider>
   );
 };

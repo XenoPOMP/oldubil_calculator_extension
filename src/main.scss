@@ -1,5 +1,14 @@
 @import "src/assets/styles/nullstyles";
+@import "src/assets/styles/templates";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html, body {
+  @extend %scrollable;
+  @extend %mainFont;
+
+  width: 400px;
+  height: 342px;
+}

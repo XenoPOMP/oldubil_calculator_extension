@@ -5,7 +5,11 @@ type LocalizationMessage = {
   description: string;
 };
 
-export interface I18Locales extends Record<'localeName', LocalizationMessage> {}
+export interface I18Locales
+  extends Record<
+    'iGot' | 'illGet' | 'liraToRouble' | 'odlubilCommission',
+    LocalizationMessage
+  > {}
 
 export type Localization = {
   [K in keyof I18Locales]: string;

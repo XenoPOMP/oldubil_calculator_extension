@@ -5,13 +5,35 @@ import {
 } from '@localization/I18Locales';
 
 export const useLocalization = (): Localization => {
-  const wrapLocale = (key: keyof I18Locales) => {
-    return {
-      [key]: getChromeLocale(key)
-    };
-  };
-
   return {
-    ...wrapLocale('localeName')
+    iGot: getChromeLocale('iGot'),
+    illGet: getChromeLocale('illGet'),
+    liraToRouble: getChromeLocale('liraToRouble'),
+    odlubilCommission: getChromeLocale('odlubilCommission')
   };
+};
+
+/**
+ * This function allows to inline variable in locale.
+ *
+ * @param original
+ * @param args
+ */
+export const inlineLocaleVar = (
+  original: string,
+  ...args: Array<{
+    variableName: string;
+    replacement: string;
+  }>
+): string => {
+  let output = original;
+
+  args.forEach(arg => {
+    output = original.replace(
+      new RegExp(`\{${arg.variableName}\}`),
+      arg.replacement
+    );
+  });
+
+  return output;
 };

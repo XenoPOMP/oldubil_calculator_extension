@@ -1,1 +1,14 @@
 @import "src/assets/styles/templates";
+
+.mainPage {
+  padding: globalPadding(1);
+  color: var(--font-primary);
+  font-size: 20px; // 1em = 20px
+
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-bottom: globalPadding(1);
+  }
+}
