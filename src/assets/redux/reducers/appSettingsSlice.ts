@@ -18,7 +18,7 @@ export type AppSettings = {
 };
 
 const initialState: AppSettings = {
-  appVersion: '1.0.0',
+  appVersion: '1.0.1',
   appName: 'React Vite Application',
   language: 'en',
   currencies: {
