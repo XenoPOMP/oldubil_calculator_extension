@@ -17,7 +17,7 @@ export const ru: I18Locales = {
   },
 
   odlubilCommission: {
-    message: 'Комиссия&ddt {PERCENT}%',
+    message: 'Комиссия Oldubil&ddt {PERCENT}%',
     description: 'Текст комиссии Oldubil.'
   },
 

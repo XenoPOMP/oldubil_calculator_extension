@@ -22,7 +22,7 @@ section.info {
     align-items: center;
     gap: .5em;
     cursor: default;
-    line-height: 125%;
+    line-height: 135%;
 
     svg {
       height: 1em;
@@ -65,4 +65,12 @@ section.additionalSettings {
       border-radius: 0 .5em .5em 0;
     }
   }
+}
+
+section.appVersion {
+  @extend %semiBold;
+
+  font-size: .8em;
+  color: gray;
+  margin-top: 2em;
 }

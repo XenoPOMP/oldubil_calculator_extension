@@ -12,7 +12,7 @@
     "description": "Текст курса лиры к рублю."
   },
   "odlubilCommission": {
-    "message": "Комиссия: {PERCENT}%",
+    "message": "Комиссия Oldubil: {PERCENT}%",
     "description": "Текст комиссии Oldubil."
   },
   "bankCard": {

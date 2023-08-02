@@ -18,7 +18,7 @@ export const en: I18Locales = {
   },
 
   odlubilCommission: {
-    message: 'Commission&ddt {PERCENT}%',
+    message: 'Oldubil commission&ddt {PERCENT}%',
     description: `Oldubil commission text.`
   },
 

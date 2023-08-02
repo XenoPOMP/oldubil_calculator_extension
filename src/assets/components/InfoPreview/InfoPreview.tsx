@@ -21,7 +21,7 @@ import type { InfoPreviewProps } from './InfoPreview.props';
 const InfoPreview: FC<InfoPreviewProps> = ({}) => {
   const loc = useLocalization();
   const { bankingCommission, totalCommission } = useBankingCommission();
-  const { bankingSystem } = useAppSettings();
+  const { bankingSystem, appVersion } = useAppSettings();
   const russianCurrency = useAppSelector(
     state => state.appSettings.currencies
   ).ru;
@@ -97,30 +97,26 @@ const InfoPreview: FC<InfoPreviewProps> = ({}) => {
         })}
       </WarningSection>
 
-      <section className={cn(styles.info)}>
-        <span>
-          {inlineLocaleVar(loc.liraToRouble, {
-            variableName: 'LIRA_COUNT',
-            replacement: `${LIRA_TO_ROUBLE}`
-          })}
-        </span>
+      <WarningSection>
+        {inlineLocaleVar(loc.liraToRouble, {
+          variableName: 'LIRA_COUNT',
+          replacement: `${LIRA_TO_ROUBLE}`
+        })}
+      </WarningSection>
 
-        <span>
-          {inlineLocaleVar(loc.odlubilCommission, {
-            variableName: 'PERCENT',
-            replacement: `${OLDUBIL_COMMISSION}`
-          })}
-        </span>
-      </section>
+      <WarningSection>
+        {inlineLocaleVar(loc.odlubilCommission, {
+          variableName: 'PERCENT',
+          replacement: `${OLDUBIL_COMMISSION}`
+        })}
+      </WarningSection>
 
-      <section className={cn(styles.info)}>
-        <span>
-          {inlineLocaleVar(loc.bankSystemCommission, {
-            variableName: 'PERCENT',
-            replacement: `${bankingCommission}`
-          })}
-        </span>
-      </section>
+      <WarningSection>
+        {inlineLocaleVar(loc.bankSystemCommission, {
+          variableName: 'PERCENT',
+          replacement: `${bankingCommission}`
+        })}
+      </WarningSection>
 
       <section className={cn(styles.additionalSettings)}>
         <button
@@ -161,6 +157,8 @@ const InfoPreview: FC<InfoPreviewProps> = ({}) => {
           LAVA
         </button>
       </section>
+
+      <section className={cn(styles.appVersion)}>v{appVersion.get()}</section>
     </>
   );
 };

@@ -12,7 +12,7 @@
     "description": "Lira to rouble currency text."
   },
   "odlubilCommission": {
-    "message": "Commission: {PERCENT}%",
+    "message": "Oldubil commission: {PERCENT}%",
     "description": "Oldubil commission text."
   },
   "bankCard": {
