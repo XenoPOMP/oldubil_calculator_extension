@@ -19,5 +19,15 @@ export const ru: I18Locales = {
   odlubilCommission: {
     message: 'Комиссия - {PERCENT}%',
     description: 'Текст комиссии Oldubil.'
+  },
+
+  bankCard: {
+    message: 'Банковская карта',
+    description: 'Опция выбора банковской системы (банковская карта).'
+  },
+
+  bankSystemCommission: {
+    message: 'Комиссия банковской системы - {PERCENT}%',
+    description: 'Текст комиссии банковской системы.'
   }
 };

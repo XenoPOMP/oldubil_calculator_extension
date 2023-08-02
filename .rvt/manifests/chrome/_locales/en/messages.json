@@ -14,5 +14,13 @@
   "odlubilCommission": {
     "message": "Commission - {PERCENT}%",
     "description": "Oldubil commission text."
+  },
+  "bankCard": {
+    "message": "Bank card",
+    "description": "Option to select a banking system (bank card)."
+  },
+  "bankSystemCommission": {
+    "message": "Commission of the banking system - {PERCENT}%",
+    "description": "The text of the commission of the banking system."
   }
 }

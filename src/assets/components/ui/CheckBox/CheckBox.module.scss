@@ -9,7 +9,7 @@ label.checkBoxLabel {
   font-size: 1em;
   cursor: pointer;
   display: flex;
-  column-gap: .2em;
+  column-gap: .5em;
 
   input.boxInput {
     @include appearance(none);

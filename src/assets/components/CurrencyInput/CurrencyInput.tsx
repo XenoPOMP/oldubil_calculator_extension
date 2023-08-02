@@ -11,6 +11,8 @@ import {
   changeCurrencyCount
 } from '@redux/reducers/appSettingsSlice';
 
+import useAppSettings from '@hooks/useAppSettings';
+
 import styles from './CurrencyInput.module.scss';
 import type { CurrencyInputProps } from './CurrencyInput.props';
 
@@ -63,6 +65,7 @@ const CurrencyInput: FC<CurrencyInputProps> = ({ heading, currency }) => {
 
   /** Redux state. */
   const input = useAppSelector(state => state.appSettings.currencies[currency]);
+  const { bankingSystem } = useAppSettings();
 
   /** Change redux state. */
   const changeInput = (value: RecordValue<AppSettings['currencies']>) => {
@@ -73,6 +76,10 @@ const CurrencyInput: FC<CurrencyInputProps> = ({ heading, currency }) => {
       })
     );
   };
+
+  useEffect(() => {
+    changeInput(input);
+  }, [bankingSystem.get()]);
 
   return (
     <section className={cn(styles.currencyInput)}>

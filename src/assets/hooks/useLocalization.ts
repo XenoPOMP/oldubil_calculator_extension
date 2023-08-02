@@ -9,7 +9,9 @@ export const useLocalization = (): Localization => {
     iGot: getChromeLocale('iGot'),
     illGet: getChromeLocale('illGet'),
     liraToRouble: getChromeLocale('liraToRouble'),
-    odlubilCommission: getChromeLocale('odlubilCommission')
+    odlubilCommission: getChromeLocale('odlubilCommission'),
+    bankCard: getChromeLocale('bankCard'),
+    bankSystemCommission: getChromeLocale('bankSystemCommission')
   };
 };
 

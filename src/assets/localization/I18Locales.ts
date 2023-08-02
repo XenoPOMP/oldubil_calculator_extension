@@ -7,7 +7,12 @@ type LocalizationMessage = {
 
 export interface I18Locales
   extends Record<
-    'iGot' | 'illGet' | 'liraToRouble' | 'odlubilCommission',
+    | 'iGot'
+    | 'illGet'
+    | 'liraToRouble'
+    | 'odlubilCommission'
+    | 'bankCard'
+    | 'bankSystemCommission',
     LocalizationMessage
   > {}
 

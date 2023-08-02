@@ -5,3 +5,34 @@ section.info {
   align-items: start;
   justify-content: space-between;
 }
+
+section.additionalSettings {
+  @apply mt-[1.25em];
+
+  font-size: .8em;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  button.control {
+    width: 100%;
+    border: 2px solid var(--back-secondary);
+    border-left: none;
+    transition: .15s ease background-color,
+                .15s ease border-color;
+
+    &.active {
+      background: var(--back-third);
+      border-color: var(--back-third);
+    }
+
+    &:first-of-type {
+      border-radius: .5em 0 0 .5em;
+      border-left: 2px solid var(--back-secondary);;
+    }
+
+    &:last-of-type {
+      border-radius: 0 .5em .5em 0;
+    }
+  }
+}

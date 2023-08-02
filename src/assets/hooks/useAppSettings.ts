@@ -1,7 +1,11 @@
 import { DeepPartial } from 'redux';
 
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
-import { AppSettings, changeLang } from '@redux/reducers/appSettingsSlice';
+import {
+  AppSettings,
+  changeBankingSystem,
+  changeLang
+} from '@redux/reducers/appSettingsSlice';
 
 type SettingController<T> = {
   get: () => T;
@@ -20,12 +24,12 @@ interface IUseAppSettings
   appVersion: Omit<SettingController<AppSettings['appVersion']>, 'set'>;
   appName: Omit<SettingController<AppSettings['appName']>, 'set'>;
   language: SettingController<AppSettings['language']>;
+  bankingSystem: SettingController<AppSettings['bankingSystem']>;
 }
 
 const useAppSettings = (): IUseAppSettings => {
-  const { appVersion, appName, language }: AppSettings = useAppSelector(
-    state => state.appSettings
-  );
+  const { appVersion, appName, language, bankingSystem }: AppSettings =
+    useAppSelector(state => state.appSettings);
 
   const dispatch = useAppDispatch();
 
@@ -41,6 +45,11 @@ const useAppSettings = (): IUseAppSettings => {
     language: {
       get: () => language,
       set: newValue => dispatch(changeLang(newValue))
+    },
+
+    bankingSystem: {
+      get: () => bankingSystem,
+      set: newValue => dispatch(changeBankingSystem(newValue))
     }
   };
 };
