@@ -10,5 +10,9 @@ html, body {
   @extend %mainFont;
 
   width: 400px;
-  height: 342px;
+  height: 550px;
+
+  main {
+    min-height: 100cqh;
+  }
 }

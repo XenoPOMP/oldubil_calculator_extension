@@ -17,7 +17,7 @@ export const ru: I18Locales = {
   },
 
   odlubilCommission: {
-    message: 'Комиссия - {PERCENT}%',
+    message: 'Комиссия&ddt {PERCENT}%',
     description: 'Текст комиссии Oldubil.'
   },
 
@@ -27,7 +27,12 @@ export const ru: I18Locales = {
   },
 
   bankSystemCommission: {
-    message: 'Комиссия банковской системы - {PERCENT}%',
+    message: 'Комиссия банковской системы&ddt {PERCENT}%',
     description: 'Текст комиссии банковской системы.'
+  },
+
+  totalCommissionWarning: {
+    message: 'Наценка&ddt {CHARGE} руб.',
+    description: 'Текст общей наценки.'
   }
 };

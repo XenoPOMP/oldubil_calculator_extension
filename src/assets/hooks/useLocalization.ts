@@ -11,7 +11,8 @@ export const useLocalization = (): Localization => {
     liraToRouble: getChromeLocale('liraToRouble'),
     odlubilCommission: getChromeLocale('odlubilCommission'),
     bankCard: getChromeLocale('bankCard'),
-    bankSystemCommission: getChromeLocale('bankSystemCommission')
+    bankSystemCommission: getChromeLocale('bankSystemCommission'),
+    totalCommissionWarning: getChromeLocale('totalCommissionWarning')
   };
 };
 

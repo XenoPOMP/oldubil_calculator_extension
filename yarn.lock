@@ -4970,10 +4970,10 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-rvt-cli@^1.3.5:
-  version "1.3.5"
-  resolved "https://registry.yarnpkg.com/rvt-cli/-/rvt-cli-1.3.5.tgz#8f2f6b02d0a130ef86c4d416ae43f34e17ef36e8"
-  integrity sha512-lWy9LFjWolssvvy4jim50PBwZQLF3p9WYT2pxDp3TBvQGVmscRRdc8aJYvp0W/n5/j5HpPPSaMwQV7i14wj2oQ==
+rvt-cli@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/rvt-cli/-/rvt-cli-1.4.0.tgz#66a2b848ee39aa9a0773a5fdb02c56073150a4f5"
+  integrity sha512-gkf7zJ2EJQf7TPeA6a6gDVBNxaxaIsBVZdeo89oDQV3yck8W1h3TSRXVlLuOwZDIgRxkAkQahvgsYyyYSYF5Cw==
   dependencies:
     "@inquirer/checkbox" "^1.3.3"
     "@inquirer/confirm" "^2.0.4"

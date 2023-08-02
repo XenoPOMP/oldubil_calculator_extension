@@ -1,9 +1,37 @@
+@import "src/assets/styles/templates";
+
 section.info {
   font-size: .8em;
   font-style: italic;
   display: flex;
   align-items: start;
   justify-content: space-between;
+  line-height: 200%;
+
+  &.warning {
+    @extend %notSelectable;
+
+    $modifier: .65;
+    $fontSize: 1em * $modifier;
+
+    color: gray;
+    margin-bottom: calc(1.25 * $fontSize);
+    font-size: $fontSize;
+    font-style: normal;
+    justify-content: start;
+    align-items: center;
+    gap: .5em;
+    cursor: default;
+    line-height: 125%;
+
+    svg {
+      height: 1em;
+
+      path {
+        fill: currentColor;
+      }
+    }
+  }
 }
 
 section.additionalSettings {
@@ -12,9 +40,11 @@ section.additionalSettings {
   font-size: .8em;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 
   button.control {
+    @apply p-[.25em];
+
     width: 100%;
     border: 2px solid var(--back-secondary);
     border-left: none;

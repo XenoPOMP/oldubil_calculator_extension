@@ -12,7 +12,7 @@
     "description": "Текст курса лиры к рублю."
   },
   "odlubilCommission": {
-    "message": "Комиссия - {PERCENT}%",
+    "message": "Комиссия: {PERCENT}%",
     "description": "Текст комиссии Oldubil."
   },
   "bankCard": {
@@ -20,7 +20,11 @@
     "description": "Опция выбора банковской системы (банковская карта)."
   },
   "bankSystemCommission": {
-    "message": "Комиссия банковской системы - {PERCENT}%",
+    "message": "Комиссия банковской системы: {PERCENT}%",
     "description": "Текст комиссии банковской системы."
+  },
+  "totalCommissionWarning": {
+    "message": "Наценка: {CHARGE} руб.",
+    "description": "Текст общей наценки."
   }
 }

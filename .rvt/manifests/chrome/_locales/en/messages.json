@@ -12,7 +12,7 @@
     "description": "Lira to rouble currency text."
   },
   "odlubilCommission": {
-    "message": "Commission - {PERCENT}%",
+    "message": "Commission: {PERCENT}%",
     "description": "Oldubil commission text."
   },
   "bankCard": {
@@ -20,7 +20,11 @@
     "description": "Option to select a banking system (bank card)."
   },
   "bankSystemCommission": {
-    "message": "Commission of the banking system - {PERCENT}%",
+    "message": "Commission of the banking system: {PERCENT}%",
     "description": "The text of the commission of the banking system."
+  },
+  "totalCommissionWarning": {
+    "message": "Extra charge: {CHARGE} rubles.",
+    "description": "Текст общей наценки."
   }
 }

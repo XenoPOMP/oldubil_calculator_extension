@@ -12,7 +12,8 @@ export interface I18Locales
     | 'liraToRouble'
     | 'odlubilCommission'
     | 'bankCard'
-    | 'bankSystemCommission',
+    | 'bankSystemCommission'
+    | 'totalCommissionWarning',
     LocalizationMessage
   > {}
 
