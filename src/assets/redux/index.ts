@@ -29,8 +29,8 @@ const persistConfig = getPersistConfig({
   storage,
   blacklist: [
     'appSettings.appVersion',
-    'appSettings.appName',
-    'appSettings.currencies'
+    'appSettings.appName'
+    // 'appSettings.currencies'
   ],
   rootReducer
 });
