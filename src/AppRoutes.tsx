@@ -2,6 +2,7 @@ import { AnimatePresence } from 'framer-motion';
 import React, { FC } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 
+import GameListPage from '@pages/GameListPage/GameListPage';
 import MainPage from '@pages/MainPage/MainPage';
 import NotFound from '@pages/NotFound/NotFound';
 
@@ -29,7 +30,9 @@ const AppRoutes: FC<{
       <Routes location={location} key={location.pathname}>
         <Route path={'*'} element={<NotFound />} />
 
-        <Route path={'/index.html'} element={<MainPage />} index />
+        <Route path={'/index.html'} element={<MainPage />} />
+
+        <Route path={'/games'} element={<GameListPage />} />
       </Routes>
     );
   };
