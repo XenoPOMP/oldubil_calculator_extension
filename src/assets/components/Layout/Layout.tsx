@@ -6,6 +6,7 @@ import { FC } from 'react';
 import GlobalProvider from '@providers/GlobalProvider/GlobalProvider';
 
 import Footer from '@ui/Footer/Footer';
+import UiContainer from '@ui/UiContainer/UiContainer';
 
 import styles from './Layout.module.scss';
 import { LayoutProps } from './Layout.props';
@@ -21,7 +22,9 @@ const Layout: FC<PropsWith<'children', LayoutProps>> = ({ children }) => {
     <GlobalProvider>
       <div className={cn(styles.layout)}>
         <main>
-          <div className={cn(styles.bodyContainer)}>{children}</div>
+          <div className={cn(styles.bodyContainer)}>
+            <UiContainer.Section>{children}</UiContainer.Section>
+          </div>
 
           <Footer />
         </main>

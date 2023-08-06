@@ -8,12 +8,13 @@
 html, body {
   @extend %scrollable;
   @extend %mainFont;
+}
 
-  width: 400px;
-  height: 550px;
+body {
+  min-height: 100vh;
 
   main {
-    min-height: 100cqh;
+    min-height: 100vh;
   }
 }
 
