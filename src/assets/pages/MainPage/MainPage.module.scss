@@ -11,4 +11,8 @@
     gap: 1em;
     margin-bottom: globalPadding(1);
   }
+
+  @media (max-width: 352px) {
+    font-size: 18px;
+  }
 }

@@ -1,30 +1,9 @@
 {
-  "iGot": {
-    "message": "I have",
-    "description": "The header of the block where the amount in rubles is entered."
-  },
-  "illGet": {
-    "message": "Ill get",
-    "description": "The header of the block where the amount in lira is entered."
-  },
-  "liraToRouble": {
-    "message": "1 TL = {LIRA_COUNT} RUB",
-    "description": "Lira to rouble currency text."
-  },
-  "odlubilCommission": {
-    "message": "Oldubil commission: {PERCENT}%",
-    "description": "Oldubil commission text."
-  },
-  "bankCard": {
-    "message": "Bank card",
-    "description": "Option to select a banking system (bank card)."
-  },
-  "bankSystemCommission": {
-    "message": "Commission of the banking system: {PERCENT}%",
-    "description": "The text of the commission of the banking system."
-  },
-  "totalCommissionWarning": {
-    "message": "Extra charge: {CHARGE} rubles.",
-    "description": "Текст общей наценки."
-  }
+  "iGot": "I have",
+  "illGet": "Ill get",
+  "liraToRouble": "1 TL = {LIRA_COUNT} RUB",
+  "odlubilCommission": "Oldubil commission: {PERCENT}%",
+  "bankCard": "Bank card",
+  "bankSystemCommission": "Commission of the banking system: {PERCENT}%",
+  "totalCommissionWarning": "Extra charge: {CHARGE} rubles."
 }

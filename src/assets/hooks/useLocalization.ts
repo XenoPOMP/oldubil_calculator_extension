@@ -1,19 +1,22 @@
+import { en } from '@locales/en';
+import { ru } from '@locales/ru';
 import {
   I18Locales,
   Localization,
   getChromeLocale
 } from '@localization/I18Locales';
 
+import useAppSettings from '@hooks/useAppSettings';
+
 export const useLocalization = (): Localization => {
-  return {
-    iGot: getChromeLocale('iGot'),
-    illGet: getChromeLocale('illGet'),
-    liraToRouble: getChromeLocale('liraToRouble'),
-    odlubilCommission: getChromeLocale('odlubilCommission'),
-    bankCard: getChromeLocale('bankCard'),
-    bankSystemCommission: getChromeLocale('bankSystemCommission'),
-    totalCommissionWarning: getChromeLocale('totalCommissionWarning')
-  };
+  const { language } = useAppSettings();
+
+  switch (language.get()) {
+    case 'ru':
+      return ru;
+    case 'en':
+      return en;
+  }
 };
 
 /**

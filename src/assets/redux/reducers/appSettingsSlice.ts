@@ -1,6 +1,7 @@
 import { RecordKey, RecordValue } from '@xenopomp/advanced-types';
 
 import { createSlice } from '@reduxjs/toolkit';
+import { osLocale, osLocaleSync } from 'os-locale';
 
 import { CurrencyInputProps } from '@components/CurrencyInput/CurrencyInput.props';
 
@@ -27,7 +28,13 @@ export type AppSettings = {
 const initialState: AppSettings = {
   appVersion: '1.2.0',
   appName: 'React Vite Application',
-  language: 'en',
+  language: ((): AppSettings['language'] => {
+    if (navigator.language === 'ru-RU') {
+      return 'ru';
+    }
+
+    return 'en';
+  })(),
   currencies: {
     ru: 0,
     tl: 0

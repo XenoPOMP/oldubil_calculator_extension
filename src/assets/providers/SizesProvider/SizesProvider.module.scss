@@ -5,4 +5,8 @@
 
   // Z-indexes
   --splash-screen: 60000;
+
+  @media (max-width: 396px) {
+    --global-padding: 10px;
+  }
 }

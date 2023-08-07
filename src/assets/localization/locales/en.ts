@@ -1,39 +1,17 @@
-import type { I18Locales } from '../I18Locales';
+import type { I18Locales, Localization } from '../I18Locales';
 
-export const en: I18Locales = {
-  iGot: {
-    message: 'I have',
-    description:
-      'The header of the block where the amount in rubles is entered.'
-  },
+export const en: Localization = {
+  iGot: 'I have',
 
-  illGet: {
-    message: 'Ill get',
-    description: `The header of the block where the amount in lira is entered.`
-  },
+  illGet: 'Ill get',
 
-  liraToRouble: {
-    message: '1 TL = {LIRA_COUNT} RUB',
-    description: `Lira to rouble currency text.`
-  },
+  liraToRouble: '1 TL = {LIRA_COUNT} RUB',
 
-  odlubilCommission: {
-    message: 'Oldubil commission&ddt {PERCENT}%',
-    description: `Oldubil commission text.`
-  },
+  odlubilCommission: 'Oldubil commission {PERCENT}%',
 
-  bankCard: {
-    message: 'Bank card',
-    description: 'Option to select a banking system (bank card).'
-  },
+  bankCard: 'Bank card',
 
-  bankSystemCommission: {
-    message: 'Commission of the banking system&ddt {PERCENT}%',
-    description: 'The text of the commission of the banking system.'
-  },
+  bankSystemCommission: 'Commission of the banking system {PERCENT}%',
 
-  totalCommissionWarning: {
-    message: 'Extra charge&ddt {CHARGE} rubles.',
-    description: 'Текст общей наценки.'
-  }
+  totalCommissionWarning: 'Extra charge {CHARGE} rubles.'
 };

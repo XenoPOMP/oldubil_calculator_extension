@@ -17,6 +17,8 @@ nav.appNavigation {
       position: relative;
 
       a {
+        transition: opacity .15s ease;
+
         svg {
           width: 1.2em;
         }
@@ -32,6 +34,11 @@ nav.appNavigation {
             border-radius: 50%;
             background: var(--nav-active);
           }
+        }
+
+        &.isBlocked {
+          pointer-events: none;
+          opacity: .5;
         }
       }
     }

@@ -30,9 +30,13 @@ const AppRoutes: FC<{
       <Routes location={location} key={location.pathname}>
         <Route path={'*'} element={<NotFound />} />
 
-        <Route path={'/index.html'} element={<MainPage />} />
+        <Route path={'/'} element={<MainPage />} />
 
-        <Route path={'/games'} element={<GameListPage />} />
+        <Route path={'/games'}>
+          <Route element={<GameListPage />} index />
+
+          <Route path={'cod'} element={<>Call of Duty</>} />
+        </Route>
       </Routes>
     );
   };

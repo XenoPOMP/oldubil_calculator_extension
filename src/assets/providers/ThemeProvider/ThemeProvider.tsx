@@ -1,19 +1,12 @@
 import { PropsWith } from '@xenopomp/advanced-types';
 
-import { FC, useContext, useEffect } from 'react';
-
-import { BodyClassnameContext } from '@providers/BodyClassnameProvider/BodyClassnameProvider';
+import cn from 'classnames';
+import { FC } from 'react';
 
 import styles from './ThemeProvider.module.scss';
 
 const ThemeProvider: FC<PropsWith<'children', {}>> = ({ children }) => {
-  const classContext = useContext(BodyClassnameContext);
-
-  useEffect(() => {
-    classContext.registerClasses('theme', [styles.themes, styles.dark]);
-  }, []);
-
-  return <>{children}</>;
+  return <div className={cn(styles.themes, styles.dark)}>{children}</div>;
 };
 
 export default ThemeProvider;
