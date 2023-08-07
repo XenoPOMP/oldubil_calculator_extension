@@ -33,6 +33,11 @@ nav.appNavigation {
             background: var(--nav-active);
           }
         }
+
+        &.isBlocked {
+          opacity: .5;
+          pointer-events: none;
+        }
       }
     }
   }

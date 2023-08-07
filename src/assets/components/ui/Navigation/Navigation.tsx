@@ -30,7 +30,9 @@ const Navigation: FC<NavigationProps> = ({}) => {
         <li>
           <NavLink
             to={'/games'}
-            className={({ isActive }) => cn(isActive && styles.active)}
+            className={({ isActive }) =>
+              cn(isActive && styles.active, styles.isBlocked)
+            }
           >
             <svg
               viewBox='0 0 22 14'
