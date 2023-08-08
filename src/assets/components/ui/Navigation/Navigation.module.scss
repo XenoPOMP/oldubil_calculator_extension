@@ -19,6 +19,10 @@ nav.appNavigation {
       a {
         svg {
           width: 1.2em;
+
+          path {
+            fill: var(--font-primary);
+          }
         }
 
         &.active {
@@ -32,6 +36,11 @@ nav.appNavigation {
             border-radius: 50%;
             background: var(--nav-active);
           }
+        }
+
+        &.isBlocked {
+          opacity: .5;
+          pointer-events: none;
         }
       }
     }
