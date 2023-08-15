@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import { useQuery } from 'react-query';
 
 import Page from '@components/Page/Page';
@@ -10,9 +10,6 @@ import Loader from '@ui/Loader/Loader';
 import ValuteCard from '@ui/ValuteCard/ValuteCard';
 
 import { useLocalization } from '@hooks/useLocalization';
-
-import { createUrl } from '@utils/createUrl';
-import { pullPattern } from '@utils/pullPattern';
 
 import { GetActualCurrenciesService } from '../../api/services/GetActualCurrencies.service';
 
