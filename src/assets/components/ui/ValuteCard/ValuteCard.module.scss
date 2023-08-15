@@ -1,7 +1,7 @@
 @import "src/assets/styles/templates";
 
 article.card {
-  @extend %flexCenter, %notSelectable;
+  @extend %flexCenter, %notSelectable, %tabularNumbers;
 
   @apply py-[.909em] px-[1.36em] gap-[.909em];
 
