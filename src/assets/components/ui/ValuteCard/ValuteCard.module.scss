@@ -43,11 +43,17 @@ h3.cardHeading {
     %notSelectable
   ;
 
+  @apply flex items-center gap-[.45em];
+
   font-size: .875em;
   color: currentColor;
   grid-column: span 2;
 
   &:not(:first-of-type) {
     @apply mt-[1em];
+  }
+
+  svg.helpIcon {
+    // cursor: pointer;
   }
 }

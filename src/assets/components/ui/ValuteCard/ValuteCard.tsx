@@ -3,13 +3,16 @@ import { PropsWith } from '@xenopomp/advanced-types';
 import cn from 'classnames';
 import { FC } from 'react';
 
+import InfoIcon from '@ui/InfoIcon/InfoIcon';
+
 import { roundNumber } from '@utils/math-utils';
 
 import styles from './ValuteCard.module.scss';
-import type { ValuteCardProps } from './ValuteCard.props';
+import { type ValuteCardProps } from './ValuteCard.props';
+import { type ValuteCardHeadingProps } from './ValuteCard.props';
 
 const ValuteCard: FC<ValuteCardProps> & {
-  Heading: FC<PropsWith<'children', {}>>;
+  Heading: FC<PropsWith<'children', ValuteCardHeadingProps>>;
 } = ({ currency = 'USD', nominal }) => {
   const Icon: FC<{}> = ({}) => {
     switch (currency) {
@@ -153,8 +156,14 @@ const ValuteCard: FC<ValuteCardProps> & {
   );
 };
 
-ValuteCard.Heading = ({ children }) => {
-  return <h3 className={cn(styles.cardHeading)}>{children}</h3>;
+ValuteCard.Heading = ({ children, help }) => {
+  return (
+    <h3 className={cn(styles.cardHeading)}>
+      {children}
+
+      {help && <InfoIcon className={cn(styles.helpIcon)} />}
+    </h3>
+  );
 };
 
 export default ValuteCard;

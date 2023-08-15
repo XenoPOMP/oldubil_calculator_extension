@@ -45,7 +45,7 @@ const ToCurrenciesPage: FC<ToCurrenciesPageProps> = () => {
           </div>
         ) : (
           <section className={cn(styles.grid)}>
-            <ValuteCard.Heading>
+            <ValuteCard.Heading help={'help'}>
               {loc.currencyOldubilHeading}
             </ValuteCard.Heading>
 
@@ -58,7 +58,7 @@ const ToCurrenciesPage: FC<ToCurrenciesPageProps> = () => {
               currency={'KZT'}
             />
 
-            <ValuteCard.Heading>
+            <ValuteCard.Heading help={'Help'}>
               {loc.currencyOfficialHeading}
             </ValuteCard.Heading>
 

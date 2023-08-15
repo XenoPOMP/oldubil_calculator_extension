@@ -4,3 +4,7 @@ export interface ValuteCardProps {
   currency?: Currency;
   nominal: number;
 }
+
+export interface ValuteCardHeadingProps {
+  help?: string;
+}
