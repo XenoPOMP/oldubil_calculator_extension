@@ -38,7 +38,10 @@ article.card {
 }
 
 h3.cardHeading {
-  @extend %semiBold;
+  @extend
+    %semiBold,
+    %notSelectable
+  ;
 
   font-size: .875em;
   color: currentColor;
