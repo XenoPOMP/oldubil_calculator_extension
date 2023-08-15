@@ -6,7 +6,10 @@
   font-size: 1rem; // 1em = 20px
 
   h2 {
-    @extend %bold;
+    @extend
+      %bold,
+      %notSelectable
+    ;
 
     @apply py-[.9em] text-center;
 

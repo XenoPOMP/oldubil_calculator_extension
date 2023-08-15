@@ -132,12 +132,20 @@ const ValuteCard: FC<ValuteCardProps> & {
     }
   };
 
+  const getProperNumber = (num: number): number | string => {
+    if (num < 0.01) {
+      return `< 0.01`;
+    }
+
+    return roundNumber(num, 2);
+  };
+
   return (
     <article className={cn(styles.card)}>
       <Icon />
 
       <span>
-        <strong>{roundNumber(nominal, 2)}</strong> {currency}
+        <strong>{getProperNumber(nominal)}</strong> {currency}
       </span>
     </article>
   );
