@@ -39,5 +39,15 @@ export const ru: I18Locales = {
   currencyComparisonPageHeading: {
     message: 'Сравнение валют',
     description: 'Заголовок страницы To Currencies.'
+  },
+
+  currencyOldubilHeading: {
+    message: 'Курс Oldubil',
+    description: 'Заголовок блока Odlubil на странице To Currencies.'
+  },
+
+  currencyOfficialHeading: {
+    message: 'Официальный курс',
+    description: 'Заголовок блока курса центробанка на странице To Currencies.'
   }
 };

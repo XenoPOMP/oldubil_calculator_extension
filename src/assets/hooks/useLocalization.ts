@@ -15,7 +15,9 @@ export const useLocalization = (): Localization => {
     totalCommissionWarning: getChromeLocale('totalCommissionWarning'),
     currencyComparisonPageHeading: getChromeLocale(
       'currencyComparisonPageHeading'
-    )
+    ),
+    currencyOldubilHeading: getChromeLocale('currencyOldubilHeading'),
+    currencyOfficialHeading: getChromeLocale('currencyOfficialHeading')
   };
 };
 

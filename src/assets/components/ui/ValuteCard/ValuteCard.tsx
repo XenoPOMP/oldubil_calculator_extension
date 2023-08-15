@@ -1,3 +1,5 @@
+import { PropsWith } from '@xenopomp/advanced-types';
+
 import cn from 'classnames';
 import { FC } from 'react';
 
@@ -7,7 +9,7 @@ import styles from './ValuteCard.module.scss';
 import type { ValuteCardProps } from './ValuteCard.props';
 
 const ValuteCard: FC<ValuteCardProps> & {
-  Separator: FC;
+  Heading: FC<PropsWith<'children', {}>>;
 } = ({ currency = 'USD', nominal }) => {
   const Icon: FC<{}> = ({}) => {
     switch (currency) {
@@ -151,8 +153,8 @@ const ValuteCard: FC<ValuteCardProps> & {
   );
 };
 
-ValuteCard.Separator = () => {
-  return <div className={cn(styles.separator)}></div>;
+ValuteCard.Heading = ({ children }) => {
+  return <h3 className={cn(styles.cardHeading)}>{children}</h3>;
 };
 
 export default ValuteCard;

@@ -14,7 +14,9 @@ export interface I18Locales
     | 'bankCard'
     | 'bankSystemCommission'
     | 'totalCommissionWarning'
-    | 'currencyComparisonPageHeading',
+    | 'currencyComparisonPageHeading'
+    | 'currencyOldubilHeading'
+    | 'currencyOfficialHeading',
     LocalizationMessage
   > {}
 

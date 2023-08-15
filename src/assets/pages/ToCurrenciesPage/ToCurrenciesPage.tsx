@@ -45,6 +45,10 @@ const ToCurrenciesPage: FC<ToCurrenciesPageProps> = () => {
           </div>
         ) : (
           <section className={cn(styles.grid)}>
+            <ValuteCard.Heading>
+              {loc.currencyOldubilHeading}
+            </ValuteCard.Heading>
+
             <ValuteCard nominal={rublesQuantity ?? 0} currency={'RUB'} />
 
             <ValuteCard nominal={liraQuantity ?? 0} currency={'TL'} />
@@ -54,7 +58,9 @@ const ToCurrenciesPage: FC<ToCurrenciesPageProps> = () => {
               currency={'KZT'}
             />
 
-            <ValuteCard.Separator />
+            <ValuteCard.Heading>
+              {loc.currencyOfficialHeading}
+            </ValuteCard.Heading>
 
             <ValuteCard
               nominal={(rublesQuantity ?? 0) * (fetchedData?.USD.value ?? 0)}
