@@ -37,7 +37,7 @@ export const ru: I18Locales = {
   },
 
   currencyComparisonPageHeading: {
-    message: 'Перевод в другие валюты',
+    message: 'Сравнение валют',
     description: 'Заголовок страницы To Currencies.'
   }
 };

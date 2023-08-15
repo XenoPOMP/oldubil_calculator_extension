@@ -38,7 +38,7 @@ export const en: I18Locales = {
   },
 
   currencyComparisonPageHeading: {
-    message: 'Transfer to other currencies',
+    message: 'Currency comparison',
     description: 'The title of the To Currencies page.'
   }
 };

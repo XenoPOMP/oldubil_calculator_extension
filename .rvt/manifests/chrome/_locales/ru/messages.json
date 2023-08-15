@@ -28,7 +28,7 @@
     "description": "Текст общей наценки."
   },
   "currencyComparisonPageHeading": {
-    "message": "Перевод в другие валюты",
+    "message": "Сравнение валют",
     "description": "Заголовок страницы To Currencies."
   }
 }
