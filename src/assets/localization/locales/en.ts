@@ -35,5 +35,10 @@ export const en: I18Locales = {
   totalCommissionWarning: {
     message: 'Extra charge&ddt {CHARGE} rubles.',
     description: 'Текст общей наценки.'
+  },
+
+  currencyComparisonPageHeading: {
+    message: 'Transfer to other currencies',
+    description: 'The title of the To Currencies page.'
   }
 };

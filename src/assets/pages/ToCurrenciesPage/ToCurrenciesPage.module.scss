@@ -1,6 +1,25 @@
 @import "src/assets/styles/templates";
 
 .toCurrenciesPage {
-  padding: globalPadding(1);
+  padding: 0 globalPadding(1) globalPadding(1) globalPadding(1);
   color: var(--font-primary);
+  font-size: 1rem; // 1em = 20px
+
+  h2 {
+    @extend %bold;
+
+    @apply py-[.9em] text-center;
+
+    font-size: 1em;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: var(--back-primary);
+  }
+
+  section.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5em;
+  }
 }

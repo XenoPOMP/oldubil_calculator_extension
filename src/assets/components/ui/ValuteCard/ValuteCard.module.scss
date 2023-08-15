@@ -1,0 +1,22 @@
+@import "src/assets/styles/templates";
+
+article.card {
+  @extend %flexCenter, %notSelectable;
+
+  @apply py-[.909em] px-[1.36em] gap-[.909em];
+
+  width: 100%;
+  font-size: .75em; // 1em = 11px
+  color: currentColor;
+  background: var(--back-secondary);
+  border-radius: .45em;
+  justify-content: start;
+
+  strong {
+    font-weight: normal;
+  }
+
+  svg.icon {
+    width: 1.45em;
+  }
+}

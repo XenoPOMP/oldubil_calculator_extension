@@ -26,5 +26,9 @@
   "totalCommissionWarning": {
     "message": "Extra charge: {CHARGE} rubles.",
     "description": "Текст общей наценки."
+  },
+  "currencyComparisonPageHeading": {
+    "message": "Transfer to other currencies",
+    "description": "The title of the To Currencies page."
   }
 }

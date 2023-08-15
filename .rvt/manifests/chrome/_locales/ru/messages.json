@@ -26,5 +26,9 @@
   "totalCommissionWarning": {
     "message": "Наценка: {CHARGE} руб.",
     "description": "Текст общей наценки."
+  },
+  "currencyComparisonPageHeading": {
+    "message": "Перевод в другие валюты",
+    "description": "Заголовок страницы To Currencies."
   }
 }
