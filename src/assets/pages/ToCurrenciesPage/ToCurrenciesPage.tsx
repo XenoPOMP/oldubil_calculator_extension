@@ -1,3 +1,4 @@
+import { AxiosError } from 'axios/index';
 import cn from 'classnames';
 import React, { FC } from 'react';
 import { useQuery } from 'react-query';
@@ -45,7 +46,11 @@ const ToCurrenciesPage: FC<ToCurrenciesPageProps> = () => {
           </div>
         ) : error ? (
           <section className={cn(styles.error)}>
-            Failed to load currencies.
+            {(error as AxiosError)?.response?.status === 429 ? (
+              <>Seems like API is disconnected.</>
+            ) : (
+              <>Unknown request error occurred.</>
+            )}
           </section>
         ) : (
           <section className={cn(styles.grid)}>
