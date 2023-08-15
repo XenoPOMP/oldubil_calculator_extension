@@ -20,6 +20,10 @@
     background: var(--back-primary);
   }
 
+  section.error {
+
+  }
+
   section.grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

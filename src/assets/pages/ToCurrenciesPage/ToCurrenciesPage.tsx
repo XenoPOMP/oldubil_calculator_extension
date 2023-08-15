@@ -43,6 +43,10 @@ const ToCurrenciesPage: FC<ToCurrenciesPageProps> = () => {
           <div className={cn('w-full flex justify-center my-[1em]')}>
             <Loader type={'wave'} mainColor={'currentColor'} />
           </div>
+        ) : error ? (
+          <section className={cn(styles.error)}>
+            Failed to load currencies.
+          </section>
         ) : (
           <section className={cn(styles.grid)}>
             <ValuteCard.Heading help={'help'}>
