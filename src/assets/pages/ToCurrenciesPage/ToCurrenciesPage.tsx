@@ -25,6 +25,8 @@ const ToCurrenciesPage: FC<ToCurrenciesPageProps> = () => {
     state => state.appSettings.currencies.ru
   );
 
+  const liraQuantity = useAppSelector(state => state.appSettings.currencies.tl);
+
   const loc = useLocalization();
 
   const fetchedData = data?.data.data;
@@ -43,6 +45,17 @@ const ToCurrenciesPage: FC<ToCurrenciesPageProps> = () => {
           </div>
         ) : (
           <section className={cn(styles.grid)}>
+            <ValuteCard nominal={rublesQuantity ?? 0} currency={'RUB'} />
+
+            <ValuteCard nominal={liraQuantity ?? 0} currency={'TL'} />
+
+            <ValuteCard
+              nominal={(rublesQuantity ?? 0) * (fetchedData?.KZT.value ?? 0)}
+              currency={'KZT'}
+            />
+
+            <ValuteCard.Separator />
+
             <ValuteCard
               nominal={(rublesQuantity ?? 0) * (fetchedData?.USD.value ?? 0)}
             />
@@ -50,11 +63,6 @@ const ToCurrenciesPage: FC<ToCurrenciesPageProps> = () => {
             <ValuteCard
               nominal={(rublesQuantity ?? 0) * (fetchedData?.EUR.value ?? 0)}
               currency={'EUR'}
-            />
-
-            <ValuteCard
-              nominal={(rublesQuantity ?? 0) * (fetchedData?.KZT.value ?? 0)}
-              currency={'KZT'}
             />
           </section>
         )}

@@ -4,7 +4,7 @@ import useEnv from '@hooks/useEnv';
 
 import { createUrl } from '@utils/createUrl';
 
-export type Currency = 'USD' | 'KZT' | 'EUR';
+export type Currency = 'RUB' | 'TL' | 'USD' | 'KZT' | 'EUR';
 
 export interface ActualCurrencyList {
   data: Record<

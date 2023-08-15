@@ -3,7 +3,7 @@
 article.card {
   @extend
     %flexCenter,
-    %notSelectable,
+    // %notSelectable,
     %tabularNumbers
   ;
 
@@ -16,11 +16,23 @@ article.card {
   border-radius: .45em;
   justify-content: start;
 
-  strong {
-    font-weight: normal;
+  span {
+    @extend %notSelectable;
+
+    strong {
+      font-weight: normal;
+      user-select: text;
+    }
   }
 
   svg.icon {
     width: 1.45em;
   }
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background: var(--back-secondary);
+  grid-column: span 2;
 }

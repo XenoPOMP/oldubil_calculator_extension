@@ -6,9 +6,56 @@ import { roundNumber } from '@utils/math-utils';
 import styles from './ValuteCard.module.scss';
 import type { ValuteCardProps } from './ValuteCard.props';
 
-const ValuteCard: FC<ValuteCardProps> = ({ currency = 'USD', nominal }) => {
+const ValuteCard: FC<ValuteCardProps> & {
+  Separator: FC;
+} = ({ currency = 'USD', nominal }) => {
   const Icon: FC<{}> = ({}) => {
     switch (currency) {
+      case 'RUB': {
+        return (
+          <>
+            <svg
+              viewBox='0 0 16 12'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+              className={cn(styles.icon)}
+            >
+              <path
+                d='M16 10C16 10.9818 15.204 11.7778 14.2222 11.7778H1.77778C0.796 11.7778 0 10.9818 0 10V8.22223H16V10Z'
+                fill='#CE2028'
+              />
+              <path d='M0 3.77783H16V8.22228H0V3.77783Z' fill='#22408C' />
+              <path
+                d='M14.2222 0.222229H1.77778C0.796 0.222229 0 1.01823 0 2.00001V3.77778H16V2.00001C16 1.01823 15.204 0.222229 14.2222 0.222229Z'
+                fill='#EEEEEE'
+              />
+            </svg>
+          </>
+        );
+      }
+
+      case 'TL': {
+        return (
+          <>
+            <svg
+              viewBox='0 0 16 12'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+              className={cn(styles.icon)}
+            >
+              <path
+                d='M16 10C16 10.9818 15.204 11.7778 14.2222 11.7778H1.77778C0.796 11.7778 0 10.9818 0 10V2.00001C0 1.01823 0.796 0.222229 1.77778 0.222229H14.2222C15.204 0.222229 16 1.01823 16 2.00001V10Z'
+                fill='#E30917'
+              />
+              <path
+                d='M7.11111 8.66668C5.63822 8.66668 4.44445 7.47334 4.44445 6.00001C4.44445 4.52712 5.63822 3.33334 7.11111 3.33334C7.69333 3.33334 8.23111 3.52223 8.66978 3.83912C8.07067 3.16179 7.19778 2.73201 6.22222 2.73201C4.41733 2.73201 2.95422 4.19512 2.95422 6.00001C2.95422 7.80534 4.41733 9.26845 6.22222 9.26845C7.19778 9.26845 8.07111 8.83868 8.66978 8.1609C8.23156 8.47779 7.69422 8.66668 7.11111 8.66668ZM8.85022 6.10223L9.93467 6.35201L10.0324 7.46001L10.6049 6.50623L11.6893 6.75557L10.9587 5.91645L11.5307 4.96223L10.5071 5.39779L9.77645 4.55823L9.87422 5.66668L8.85022 6.10223Z'
+                fill='#EEEEEE'
+              />
+            </svg>
+          </>
+        );
+      }
+
       case 'USD': {
         return (
           <>
@@ -94,6 +141,10 @@ const ValuteCard: FC<ValuteCardProps> = ({ currency = 'USD', nominal }) => {
       </span>
     </article>
   );
+};
+
+ValuteCard.Separator = () => {
+  return <div className={cn(styles.separator)}></div>;
 };
 
 export default ValuteCard;
