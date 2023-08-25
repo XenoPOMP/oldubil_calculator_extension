@@ -35,5 +35,21 @@ export const en: I18Locales = {
   totalCommissionWarning: {
     message: 'Extra charge&ddt {CHARGE} rubles.',
     description: 'Текст общей наценки.'
+  },
+
+  currencyComparisonPageHeading: {
+    message: 'Currency comparison',
+    description: 'The title of the To Currencies page.'
+  },
+
+  currencyOldubilHeading: {
+    message: 'Oldubil Course',
+    description: 'The title of the Odlubil block on the To Currencies page.'
+  },
+
+  currencyOfficialHeading: {
+    message: 'Official course',
+    description:
+      'The heading of the central banks exchange rate block on the To Currencies page.'
   }
 };

@@ -5,6 +5,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import GameListPage from '@pages/GameListPage/GameListPage';
 import MainPage from '@pages/MainPage/MainPage';
 import NotFound from '@pages/NotFound/NotFound';
+import ToCurrenciesPage from '@pages/ToCurrenciesPage/ToCurrenciesPage';
 
 /**
  * Root component of application routes.
@@ -33,6 +34,8 @@ const AppRoutes: FC<{
         <Route path={'/index.html'} element={<MainPage />} />
 
         <Route path={'/games'} element={<GameListPage />} />
+
+        <Route path={'/to-currencies'} element={<ToCurrenciesPage />} />
       </Routes>
     );
   };

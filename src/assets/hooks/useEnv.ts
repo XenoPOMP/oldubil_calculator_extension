@@ -9,6 +9,7 @@ export interface Env {
     WEBSOCKET?: string;
     HTTP?: string;
   };
+  API_KEY: string;
 }
 
 const useEnv = (): Env => {
@@ -21,8 +22,9 @@ const useEnv = (): Env => {
     APP_PORT: env.VITE_APP_PORT,
     SSL: {
       WEBSOCKET: env.VITE_WS_SSL,
-      HTTP: env.VITE_HTTP_SSL,
+      HTTP: env.VITE_HTTP_SSL
     },
+    API_KEY: env.VITE_API_KEY
   };
 };
 

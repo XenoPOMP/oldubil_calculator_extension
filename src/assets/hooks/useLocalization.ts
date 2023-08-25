@@ -12,7 +12,12 @@ export const useLocalization = (): Localization => {
     odlubilCommission: getChromeLocale('odlubilCommission'),
     bankCard: getChromeLocale('bankCard'),
     bankSystemCommission: getChromeLocale('bankSystemCommission'),
-    totalCommissionWarning: getChromeLocale('totalCommissionWarning')
+    totalCommissionWarning: getChromeLocale('totalCommissionWarning'),
+    currencyComparisonPageHeading: getChromeLocale(
+      'currencyComparisonPageHeading'
+    ),
+    currencyOldubilHeading: getChromeLocale('currencyOldubilHeading'),
+    currencyOfficialHeading: getChromeLocale('currencyOfficialHeading')
   };
 };
 
