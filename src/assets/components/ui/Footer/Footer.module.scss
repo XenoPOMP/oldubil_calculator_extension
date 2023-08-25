@@ -2,8 +2,7 @@
 
 footer.appFooter {
   @extend %flexCenter, %notSelectable;
-
-  @apply px-[1em] overflow-hidden;
+  @apply px-[1em];
 
   font-size:  20px; // 1em = 20px
   color: var(--font-primary);
