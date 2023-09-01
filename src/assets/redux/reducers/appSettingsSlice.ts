@@ -1,4 +1,4 @@
-import { RecordKey, RecordValue } from '@xenopomp/advanced-types';
+import { Defined, RecordKey, RecordValue } from '@xenopomp/advanced-types';
 
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -102,11 +102,22 @@ const appSettingsSlice = createSlice({
       action: ReduxAction<AppSettings['bankingSystem']>
     ) {
       state.bankingSystem = action.payload;
+    },
+
+    changeFetchedLiraCount(
+      state,
+      action: ReduxAction<Defined<AppSettings['fetchedLiraPrice']>>
+    ) {
+      state.fetchedLiraPrice = action.payload;
     }
   }
 });
 
 export default appSettingsSlice.reducer;
-export const { changeLang, changeCurrencyCount, changeBankingSystem } =
-  appSettingsSlice.actions;
+export const {
+  changeLang,
+  changeCurrencyCount,
+  changeBankingSystem,
+  changeFetchedLiraCount
+} = appSettingsSlice.actions;
 export const initialAppSettings = appSettingsSlice.getInitialState();
