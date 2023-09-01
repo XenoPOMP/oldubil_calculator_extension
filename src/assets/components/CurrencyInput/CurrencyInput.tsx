@@ -1,7 +1,7 @@
 import { RecordValue } from '@xenopomp/advanced-types';
 
 import cn from 'classnames';
-import { FC, ReactNode, useEffect, useState } from 'react';
+import { FC, ReactNode, useContext, useEffect, useState } from 'react';
 import NumericInput from 'react-numeric-input';
 import { useDispatch } from 'react-redux';
 
@@ -10,6 +10,10 @@ import {
   AppSettings,
   changeCurrencyCount
 } from '@redux/reducers/appSettingsSlice';
+
+import { FetcherContext } from '@providers/Fetcher/Fetcher';
+
+import Loader from '@ui/Loader/Loader';
 
 import useAppSettings from '@hooks/useAppSettings';
 
@@ -67,6 +71,9 @@ const CurrencyInput: FC<CurrencyInputProps> = ({ heading, currency }) => {
   const input = useAppSelector(state => state.appSettings.currencies[currency]);
   const { bankingSystem } = useAppSettings();
 
+  /** FetcherContext */
+  const { isFetching } = useContext(FetcherContext);
+
   /** Change redux state. */
   const changeInput = (value: RecordValue<AppSettings['currencies']>) => {
     dispatch(
@@ -85,16 +92,26 @@ const CurrencyInput: FC<CurrencyInputProps> = ({ heading, currency }) => {
     <section className={cn(styles.currencyInput)}>
       {heading && <h2>{heading}</h2>}
 
-      <article className={cn(styles.input)}>
+      <article className={cn(styles.input, isFetching && styles.fetching)}>
         <div className={cn(styles.iconBlock)}>{currencyIcons[currency]}</div>
 
-        <NumericInput
-          strict
-          value={input as string | number | undefined}
-          onChange={val => {
-            changeInput(val);
-          }}
-        />
+        {isFetching ? (
+          <div
+            className={cn(
+              'h-full aspect-square flex items-center justify-center mx-[.5em]'
+            )}
+          >
+            <Loader type={'three-dots'} mainColor={'var(--font-primary)'} />
+          </div>
+        ) : (
+          <NumericInput
+            strict
+            value={input as string | number | undefined}
+            onChange={val => {
+              changeInput(val);
+            }}
+          />
+        )}
       </article>
     </section>
   );

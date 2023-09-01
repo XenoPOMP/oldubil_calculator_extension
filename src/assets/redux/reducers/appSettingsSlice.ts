@@ -1,4 +1,4 @@
-import { RecordKey, RecordValue } from '@xenopomp/advanced-types';
+import { Defined, RecordKey, RecordValue } from '@xenopomp/advanced-types';
 
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -7,6 +7,7 @@ import { CurrencyInputProps } from '@components/CurrencyInput/CurrencyInput.prop
 import type { ReduxAction } from '@redux/types';
 
 import { roundNumber } from '@utils/math-utils';
+import { normalizeNumber } from '@utils/normalizeNumber';
 
 import {
   BANK_COMMISSION,
@@ -21,6 +22,7 @@ export type AppSettings = {
   appName: string;
   language: 'en' | 'ru';
   currencies: Record<CurrencyInputProps['currency'], number | null>;
+  fetchedLiraPrice?: number;
   bankingSystem: 'QIWI' | 'BANK' | 'LAVA';
 };
 
@@ -51,6 +53,9 @@ const appSettingsSlice = createSlice({
         count: RecordValue<AppSettings['currencies']>;
       }>
     ) {
+      const LOCAL_LIRA_TO_ROUBLE: number =
+        state.fetchedLiraPrice ?? LIRA_TO_ROUBLE;
+
       state.currencies[action.payload.currency] = action.payload.count;
 
       const BANK_SPECIAL_COMMISSION: number = (() => {
@@ -73,9 +78,8 @@ const appSettingsSlice = createSlice({
 
       if (action.payload.currency === 'ru') {
         const liraCount =
-          state.currencies.ru === null
-            ? 0
-            : state.currencies.ru / LIRA_TO_ROUBLE;
+          normalizeNumber(state.currencies.ru) / LOCAL_LIRA_TO_ROUBLE;
+
         const percents = (100 - TOTAL_COMMISSION) / 100;
 
         state.currencies.tl = roundNumber(liraCount * percents, 2);
@@ -83,7 +87,8 @@ const appSettingsSlice = createSlice({
 
       if (action.payload.currency === 'tl') {
         const roubleCount =
-          state.currencies.tl === null ? 0 : state.currencies.tl * 5;
+          normalizeNumber(state.currencies.tl) * LOCAL_LIRA_TO_ROUBLE;
+
         const percents = (100 + TOTAL_COMMISSION) / 100;
 
         // console.log((100 + OLDUBIL_COMMISSION) / 100);
@@ -97,11 +102,22 @@ const appSettingsSlice = createSlice({
       action: ReduxAction<AppSettings['bankingSystem']>
     ) {
       state.bankingSystem = action.payload;
+    },
+
+    changeFetchedLiraCount(
+      state,
+      action: ReduxAction<Defined<AppSettings['fetchedLiraPrice']>>
+    ) {
+      state.fetchedLiraPrice = action.payload;
     }
   }
 });
 
 export default appSettingsSlice.reducer;
-export const { changeLang, changeCurrencyCount, changeBankingSystem } =
-  appSettingsSlice.actions;
+export const {
+  changeLang,
+  changeCurrencyCount,
+  changeBankingSystem,
+  changeFetchedLiraCount
+} = appSettingsSlice.actions;
 export const initialAppSettings = appSettingsSlice.getInitialState();

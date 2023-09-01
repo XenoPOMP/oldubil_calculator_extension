@@ -18,7 +18,7 @@ type SettingController<T> = {
 
 interface IUseAppSettings
   extends Record<
-    Exclude<keyof AppSettings, 'currencies'>,
+    Exclude<keyof AppSettings, 'currencies' | 'fetchedLiraPrice'>,
     DeepPartial<SettingController<any>>
   > {
   appVersion: Omit<SettingController<AppSettings['appVersion']>, 'set'>;
