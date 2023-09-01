@@ -2,10 +2,20 @@
 
 .layout {
   width: 100%;
-  min-height: 342px;
+  // min-height: 342px;
   background: var(--back-primary);
 
   main {
+    @apply flex flex-col;
+
     max-width: 100%;
+
+    .bodyContainer {
+      flex-grow: 1;
+    }
+
+    footer {
+      flex-shrink: 0;
+    }
   }
 }

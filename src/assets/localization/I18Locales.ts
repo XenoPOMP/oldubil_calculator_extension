@@ -13,7 +13,10 @@ export interface I18Locales
     | 'odlubilCommission'
     | 'bankCard'
     | 'bankSystemCommission'
-    | 'totalCommissionWarning',
+    | 'totalCommissionWarning'
+    | 'currencyComparisonPageHeading'
+    | 'currencyOldubilHeading'
+    | 'currencyOfficialHeading',
     LocalizationMessage
   > {}
 

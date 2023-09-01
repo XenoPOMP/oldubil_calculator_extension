@@ -1,0 +1,59 @@
+@import "src/assets/styles/templates";
+
+article.card {
+  @extend
+    %flexCenter,
+    // %notSelectable,
+    %tabularNumbers
+  ;
+
+  @apply py-[.909em] px-[1.36em] gap-[.909em];
+
+  width: 100%;
+  font-size: .75em; // 1em = 11px
+  color: currentColor;
+  background: var(--back-secondary);
+  border-radius: .45em;
+  justify-content: start;
+
+  span {
+    @extend %notSelectable;
+
+    strong {
+      font-weight: normal;
+      user-select: text;
+    }
+  }
+
+  svg.icon {
+    width: 1.45em;
+  }
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background: var(--back-secondary);
+  grid-column: span 2;
+}
+
+h3.cardHeading {
+  @extend
+    %semiBold,
+    %notSelectable
+  ;
+
+  @apply flex items-center gap-[.45em];
+
+  font-size: .875em;
+  color: currentColor;
+  grid-column: span 2;
+
+  &:not(:first-of-type) {
+    @apply mt-[1em];
+  }
+
+  svg.helpIcon {
+    // cursor: pointer;
+  }
+}

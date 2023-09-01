@@ -1,0 +1,15 @@
+@import "src/assets/styles/templates";
+
+footer.appFooter {
+  @extend %flexCenter, %notSelectable;
+
+  @apply px-[1em] overflow-hidden;
+
+  font-size:  20px; // 1em = 20px
+  color: var(--font-primary);
+  height: 3em;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid var(--back-secondary);
+}

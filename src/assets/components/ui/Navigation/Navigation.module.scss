@@ -1,0 +1,48 @@
+@import "src/assets/styles/templates";
+
+nav.appNavigation {
+  font-size: 1em; // 1em = 20px
+  height: 100%;
+
+  ul {
+    @extend %flexCenter;
+
+    gap: 2em;
+    height: 100%;
+
+    li {
+      @extend %flexCenter;
+
+      height: 100%;
+      position: relative;
+
+      a {
+        svg {
+          width: 1.2em;
+
+          path {
+            fill: var(--font-primary);
+          }
+        }
+
+        &.active {
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: -.25em;
+            left: calc(50% - .25em);
+            width: .5em;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: var(--nav-active);
+          }
+        }
+
+        &.isBlocked {
+          opacity: .5;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
