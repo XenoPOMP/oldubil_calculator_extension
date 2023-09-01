@@ -1,7 +1,7 @@
 import { PropsWith } from '@xenopomp/advanced-types';
 
 import axios from 'axios';
-import { FC, useEffect } from 'react';
+import { FC, createContext, useEffect } from 'react';
 import { useQuery } from 'react-query';
 import scrapSite from 'ts-website-scrapper';
 
@@ -14,24 +14,41 @@ import { isUndefined } from '@utils/type-checks';
 
 import type { FetcherProps } from './Fetcher.props';
 
+export const FetcherContext = createContext<{
+  isFetching: boolean;
+}>({
+  isFetching: false
+});
+
 const Fetcher: FC<PropsWith<'children', FetcherProps>> = ({ children }) => {
   const dispatch = useAppDispatch();
   const { BACKEND_ADDRESS } = useEnv();
 
-  const { data } = useQuery(
+  const fetchCourseFromSite = useQuery(
     'fetch-lira-price-from-backend',
     async () => await axios.get<number | undefined>(`${BACKEND_ADDRESS}/course`)
   );
 
   useEffect(() => {
-    if (isUndefined(data?.data) || isUndefined(data)) {
+    if (
+      isUndefined(fetchCourseFromSite.data?.data) ||
+      isUndefined(fetchCourseFromSite.data)
+    ) {
       return;
     }
 
-    dispatch(changeFetchedLiraCount(data.data));
-  }, [data]);
+    dispatch(changeFetchedLiraCount(fetchCourseFromSite.data.data));
+  }, [fetchCourseFromSite.data]);
 
-  return <>{children}</>;
+  return (
+    <FetcherContext.Provider
+      value={{
+        isFetching: fetchCourseFromSite.isLoading
+      }}
+    >
+      {children}
+    </FetcherContext.Provider>
+  );
 };
 
 export default Fetcher;

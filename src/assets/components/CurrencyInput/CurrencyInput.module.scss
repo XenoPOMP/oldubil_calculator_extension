@@ -22,6 +22,10 @@ section.currencyInput {
     display: flex;
     container-type: inline-size;
 
+    &.fetching {
+      pointer-events: none;
+    }
+
     .iconBlock {
       @extend %flexCenter;
       @extend %notSelectable;
