@@ -29,7 +29,8 @@ const persistConfig = getPersistConfig({
   storage,
   blacklist: [
     'appSettings.appVersion',
-    'appSettings.appName'
+    'appSettings.appName',
+    'appSettings.fetchedLiraPrice'
     // 'appSettings.currencies'
   ],
   rootReducer

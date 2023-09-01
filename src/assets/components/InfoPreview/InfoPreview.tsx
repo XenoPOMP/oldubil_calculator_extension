@@ -1,12 +1,15 @@
 import { PropsWith } from '@xenopomp/advanced-types';
 
 import cn from 'classnames';
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useContext } from 'react';
 
 import { useAppSelector } from '@redux/hooks';
 
+import { FetcherContext } from '@providers/Fetcher/Fetcher';
+
 import CheckBox from '@ui/CheckBox/CheckBox';
 import InfoIcon from '@ui/InfoIcon/InfoIcon';
+import Loader from '@ui/Loader/Loader';
 
 import useAppSettings from '@hooks/useAppSettings';
 import { useBankingCommission } from '@hooks/useBankingCommission';
@@ -47,29 +50,36 @@ const InfoPreview: FC<InfoPreviewProps> = ({}) => {
     return textOutput;
   };
 
-  const WarningSection: FC<PropsWith<'className' | 'children', {}>> = ({
-    className,
-    children
-  }) => {
+  const WarningSection: FC<
+    PropsWith<'className' | 'children', { followFetch?: boolean }>
+  > = ({ className, children, followFetch = false }) => {
+    const { isFetching } = useContext(FetcherContext);
+
     return (
       <section className={cn(styles.info, styles.warning, className)}>
         <InfoIcon />
 
-        <div>{children}</div>
+        {followFetch && isFetching ? (
+          <>
+            <Loader height={'5px'} type={'three-dots'} mainColor={'gray'} />
+          </>
+        ) : (
+          <div>{children}</div>
+        )}
       </section>
     );
   };
 
   return (
     <>
-      <WarningSection>
+      <WarningSection followFetch>
         {inlineLocaleVar(loc.totalCommissionWarning, {
           variableName: 'CHARGE',
           replacement: getCommissionWarningString()
         })}
       </WarningSection>
 
-      <WarningSection>
+      <WarningSection followFetch>
         {inlineLocaleVar(loc.liraToRouble, {
           variableName: 'LIRA_COUNT',
           replacement: `${FETCHED_LIRA_COURSE ?? LIRA_TO_ROUBLE}`
