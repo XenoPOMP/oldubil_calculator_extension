@@ -10,6 +10,7 @@ export interface Env {
     HTTP?: string;
   };
   API_KEY: string;
+  BACKEND_ADDRESS: string;
 }
 
 const useEnv = (): Env => {
@@ -24,7 +25,8 @@ const useEnv = (): Env => {
       WEBSOCKET: env.VITE_WS_SSL,
       HTTP: env.VITE_HTTP_SSL
     },
-    API_KEY: env.VITE_API_KEY
+    API_KEY: env.VITE_API_KEY,
+    BACKEND_ADDRESS: env.VITE_BACKEND_ADDRESS
   };
 };
 

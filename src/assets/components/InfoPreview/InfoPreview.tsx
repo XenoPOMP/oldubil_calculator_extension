@@ -26,6 +26,9 @@ const InfoPreview: FC<InfoPreviewProps> = ({}) => {
   const russianCurrency = useAppSelector(
     state => state.appSettings.currencies
   ).ru;
+  const FETCHED_LIRA_COURSE = useAppSelector(
+    state => state.appSettings.fetchedLiraPrice
+  );
 
   const getCommissionWarningString = (): string => {
     const roundedOverflow = roundNumber(
@@ -69,7 +72,7 @@ const InfoPreview: FC<InfoPreviewProps> = ({}) => {
       <WarningSection>
         {inlineLocaleVar(loc.liraToRouble, {
           variableName: 'LIRA_COUNT',
-          replacement: `${LIRA_TO_ROUBLE}`
+          replacement: `${FETCHED_LIRA_COURSE ?? LIRA_TO_ROUBLE}`
         })}
       </WarningSection>
 
