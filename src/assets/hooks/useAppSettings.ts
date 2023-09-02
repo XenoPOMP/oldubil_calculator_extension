@@ -4,7 +4,8 @@ import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import {
   AppSettings,
   changeBankingSystem,
-  changeLang
+  changeLang,
+  changeTheme
 } from '@redux/reducers/appSettingsSlice';
 
 type SettingController<T> = {
@@ -25,10 +26,11 @@ interface IUseAppSettings
   appName: Omit<SettingController<AppSettings['appName']>, 'set'>;
   language: SettingController<AppSettings['language']>;
   bankingSystem: SettingController<AppSettings['bankingSystem']>;
+  theme: SettingController<AppSettings['theme']>;
 }
 
 const useAppSettings = (): IUseAppSettings => {
-  const { appVersion, appName, language, bankingSystem }: AppSettings =
+  const { appVersion, appName, language, bankingSystem, theme }: AppSettings =
     useAppSelector(state => state.appSettings);
 
   const dispatch = useAppDispatch();
@@ -50,6 +52,11 @@ const useAppSettings = (): IUseAppSettings => {
     bankingSystem: {
       get: () => bankingSystem,
       set: newValue => dispatch(changeBankingSystem(newValue))
+    },
+
+    theme: {
+      get: () => theme,
+      set: newValue => dispatch(changeTheme(newValue))
     }
   };
 };

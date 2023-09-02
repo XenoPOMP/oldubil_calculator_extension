@@ -1,9 +1,11 @@
 @import "src/assets/styles/templates";
 
 .layout {
+  @apply bg-back-primary text-font-primary;
+
   width: 100%;
   // min-height: 342px;
-  background: var(--back-primary);
+  // background: var(--back-primary);
 
   main {
     @apply flex flex-col;

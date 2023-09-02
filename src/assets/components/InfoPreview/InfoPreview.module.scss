@@ -11,10 +11,12 @@ section.info {
   &.warning {
     @extend %notSelectable;
 
+    @apply text-warning;
+
     $modifier: .65;
     $fontSize: 1em * $modifier;
 
-    color: gray;
+    // color: gray;
     margin-bottom: calc(1.25 * $fontSize);
     font-size: $fontSize;
     font-style: normal;
@@ -28,7 +30,9 @@ section.info {
       height: 1em;
 
       path {
-        fill: currentColor;
+        // @apply fill-warning;
+
+        // fill: currentColor;
       }
     }
   }
