@@ -12,7 +12,7 @@ export const ru: I18Locales = {
   },
 
   liraToRouble: {
-    message: '1 лира = {LIRA_COUNT} рублей',
+    message: '1 TL = {LIRA_COUNT} RUB',
     description: 'Текст курса лиры к рублю.'
   },
 
