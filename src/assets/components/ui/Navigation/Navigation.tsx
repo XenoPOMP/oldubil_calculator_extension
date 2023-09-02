@@ -47,9 +47,7 @@ const Navigation: FC<NavigationProps> = ({}) => {
         <li>
           <NavLink
             to={'/to-currencies'}
-            className={({ isActive }) =>
-              cn(isActive && styles.active, styles.isBlocked)
-            }
+            className={({ isActive }) => cn(isActive && styles.active)}
           >
             <svg
               viewBox='0 0 26 26'

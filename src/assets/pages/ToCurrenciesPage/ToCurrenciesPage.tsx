@@ -30,7 +30,7 @@ const ToCurrenciesPage: FC<ToCurrenciesPageProps> = () => {
 
   const loc = useLocalization();
 
-  const fetchedData = data?.data.data;
+  const fetchedData = data?.data;
 
   return (
     <Page
@@ -63,7 +63,7 @@ const ToCurrenciesPage: FC<ToCurrenciesPageProps> = () => {
             <ValuteCard nominal={liraQuantity ?? 0} currency={'TL'} />
 
             <ValuteCard
-              nominal={(rublesQuantity ?? 0) * (fetchedData?.KZT.value ?? 0)}
+              nominal={(rublesQuantity ?? 0) / ((fetchedData?.KZT ?? 0) / 100)}
               currency={'KZT'}
             />
 
@@ -72,11 +72,11 @@ const ToCurrenciesPage: FC<ToCurrenciesPageProps> = () => {
             </ValuteCard.Heading>
 
             <ValuteCard
-              nominal={(rublesQuantity ?? 0) * (fetchedData?.USD.value ?? 0)}
+              nominal={(rublesQuantity ?? 0) / (fetchedData?.USD ?? 0)}
             />
 
             <ValuteCard
-              nominal={(rublesQuantity ?? 0) * (fetchedData?.EUR.value ?? 0)}
+              nominal={(rublesQuantity ?? 0) / (fetchedData?.EUR ?? 0)}
               currency={'EUR'}
             />
           </section>
