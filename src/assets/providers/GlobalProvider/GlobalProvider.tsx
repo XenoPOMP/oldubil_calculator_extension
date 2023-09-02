@@ -11,7 +11,7 @@ const GlobalProvider: FC<PropsWith<'children', {}>> = ({ children }) => {
     <>
       <BodyClassnameProvider>
         <SizesProvider>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider enabled={false}>{children}</ThemeProvider>
         </SizesProvider>
       </BodyClassnameProvider>
     </>

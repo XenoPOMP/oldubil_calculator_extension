@@ -20,6 +20,7 @@ import {
 export type AppSettings = {
   appVersion: string;
   appName: string;
+  theme: 'theme-dark' | 'theme-light';
   language: 'en' | 'ru';
   currencies: Record<CurrencyInputProps['currency'], number | null>;
   fetchedLiraPrice?: number;
@@ -29,6 +30,7 @@ export type AppSettings = {
 const initialState: AppSettings = {
   appVersion: '1.2.0',
   appName: 'React Vite Application',
+  theme: 'theme-dark',
   language: 'en',
   currencies: {
     ru: 0,
@@ -126,6 +128,10 @@ const appSettingsSlice = createSlice({
           count: state.currencies.ru
         }
       });
+    },
+
+    changeTheme(state, action: ReduxAction<AppSettings['theme']>) {
+      state.theme = action.payload;
     }
   }
 });
@@ -135,6 +141,7 @@ export const {
   changeLang,
   changeCurrencyCount,
   changeBankingSystem,
-  changeFetchedLiraCount
+  changeFetchedLiraCount,
+  changeTheme
 } = appSettingsSlice.actions;
 export const initialAppSettings = appSettingsSlice.getInitialState();

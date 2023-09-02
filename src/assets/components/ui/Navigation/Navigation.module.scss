@@ -21,12 +21,16 @@ nav.appNavigation {
           width: 1.2em;
 
           path {
-            fill: var(--font-primary);
+            @apply fill-font-primary;
+
+            // fill: var(--font-primary);
           }
         }
 
         &.active {
           &:after {
+            @apply bg-nav-active;
+
             content: "";
             position: absolute;
             bottom: -.25em;
@@ -34,7 +38,7 @@ nav.appNavigation {
             width: .5em;
             aspect-ratio: 1;
             border-radius: 50%;
-            background: var(--nav-active);
+            // background: var(--nav-active);
           }
         }
 

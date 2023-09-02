@@ -11,13 +11,13 @@
       %notSelectable
     ;
 
-    @apply py-[.9em] text-center;
+    @apply py-[.9em] text-center bg-back-primary;
 
     font-size: 1em;
     position: sticky;
     top: 0;
     left: 0;
-    background: var(--back-primary);
+    // background: var(--back-primary);
   }
 
   section.error {

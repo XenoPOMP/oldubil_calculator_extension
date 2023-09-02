@@ -7,6 +7,8 @@ import GlobalProvider from '@providers/GlobalProvider/GlobalProvider';
 
 import Footer from '@ui/Footer/Footer';
 
+import useAppSettings from '@hooks/useAppSettings';
+
 import styles from './Layout.module.scss';
 import { LayoutProps } from './Layout.props';
 
@@ -17,9 +19,11 @@ import { LayoutProps } from './Layout.props';
  * @constructor
  */
 const Layout: FC<PropsWith<'children', LayoutProps>> = ({ children }) => {
+  const { theme } = useAppSettings();
+
   return (
     <GlobalProvider>
-      <div className={cn(styles.layout)}>
+      <div className={cn(styles.layout, theme.get())}>
         <main>
           <div className={cn(styles.bodyContainer)}>{children}</div>
 

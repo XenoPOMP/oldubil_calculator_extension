@@ -6,12 +6,17 @@ import { BodyClassnameContext } from '@providers/BodyClassnameProvider/BodyClass
 
 import styles from './ThemeProvider.module.scss';
 
-const ThemeProvider: FC<PropsWith<'children', {}>> = ({ children }) => {
-  const classContext = useContext(BodyClassnameContext);
+const ThemeProvider: FC<PropsWith<'children', { enabled?: boolean }>> = ({
+  children,
+  enabled
+}) => {
+  if (enabled) {
+    const classContext = useContext(BodyClassnameContext);
 
-  useEffect(() => {
-    classContext.registerClasses('theme', [styles.themes, styles.dark]);
-  }, []);
+    useEffect(() => {
+      classContext.registerClasses('theme', [styles.themes, styles.dark]);
+    }, []);
+  }
 
   return <>{children}</>;
 };

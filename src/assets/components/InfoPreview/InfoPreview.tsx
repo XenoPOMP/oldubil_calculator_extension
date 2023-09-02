@@ -61,7 +61,11 @@ const InfoPreview: FC<InfoPreviewProps> = ({}) => {
 
         {followFetch && isFetching ? (
           <>
-            <Loader height={'5px'} type={'three-dots'} mainColor={'gray'} />
+            <Loader
+              height={'5px'}
+              type={'three-dots'}
+              className={cn('text-warning')}
+            />
           </>
         ) : (
           <div>{children}</div>
