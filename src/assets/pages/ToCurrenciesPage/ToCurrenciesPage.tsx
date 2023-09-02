@@ -42,7 +42,7 @@ const ToCurrenciesPage: FC<ToCurrenciesPageProps> = () => {
 
         {isLoading ? (
           <div className={cn('w-full flex justify-center my-[1em]')}>
-            <Loader type={'wave'} mainColor={'currentColor'} />
+            <Loader type={'three-dots'} mainColor={'currentColor'} />
           </div>
         ) : error ? (
           <section className={cn(styles.error)}>
