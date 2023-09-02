@@ -43,22 +43,26 @@ section.additionalSettings {
   grid-template-columns: repeat(2, 1fr);
 
   button.control {
-    @apply p-[.25em];
+    @apply p-[.25em] border-2 border-back-secondary;
 
     width: 100%;
-    border: 2px solid var(--back-secondary);
-    border-left: none;
+    // border: 2px solid var(--back-secondary);
+    // border-left: none;
     transition: .15s ease background-color,
                 .15s ease border-color;
 
     &.active {
-      background: var(--back-third);
-      border-color: var(--back-third);
+      @apply bg-back-third border-back-third;
+
+      // background: var(--back-third);
+      // border-color: var(--back-third);
     }
 
     &:first-of-type {
+      @apply border-l-2 border-l-back-secondary;
+
       border-radius: .5em 0 0 .5em;
-      border-left: 2px solid var(--back-secondary);;
+      // border-left: 2px solid var(--back-secondary);
     }
 
     &:last-of-type {
@@ -70,7 +74,9 @@ section.additionalSettings {
 section.appVersion {
   @extend %semiBold;
 
+  @apply text-warning;
+
   font-size: .8em;
-  color: gray;
+  // color: gray;
   margin-top: 2em;
 }

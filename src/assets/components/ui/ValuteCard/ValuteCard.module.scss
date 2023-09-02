@@ -7,12 +7,12 @@ article.card {
     %tabularNumbers
   ;
 
-  @apply py-[.909em] px-[1.36em] gap-[.909em];
+  @apply py-[.909em] px-[1.36em] gap-[.909em] bg-back-secondary;
 
   width: 100%;
   font-size: .75em; // 1em = 11px
   color: currentColor;
-  background: var(--back-secondary);
+  // background: var(--back-secondary);
   border-radius: .45em;
   justify-content: start;
 
@@ -31,9 +31,11 @@ article.card {
 }
 
 .separator {
+  @apply bg-back-secondary;
+
   width: 100%;
   height: 1px;
-  background: var(--back-secondary);
+  // background: var(--back-secondary);
   grid-column: span 2;
 }
 

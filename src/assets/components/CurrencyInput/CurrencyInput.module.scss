@@ -14,10 +14,12 @@ section.currencyInput {
   }
 
   article.input {
+    @apply bg-back-secondary;
+
     width: 100%;
     height: 1.7em;
     border-radius: .25em;
-    background: var(--back-secondary);
+    // background: var(--back-secondary);
     overflow: hidden;
     display: flex;
     container-type: inline-size;
@@ -30,9 +32,11 @@ section.currencyInput {
       @extend %flexCenter;
       @extend %notSelectable;
 
+      @apply bg-back-third;
+
       height: 100%;
       aspect-ratio: 1;
-      background: var(--back-third);
+      // background: var(--back-third);
     }
 
     input {

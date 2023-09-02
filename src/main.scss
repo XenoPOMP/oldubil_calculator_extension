@@ -9,6 +9,8 @@ html, body {
   @extend %scrollable;
   @extend %mainFont;
 
+  @apply bg-back-primary text-font-primary;
+
   width: 400px;
   height: 550px;
 

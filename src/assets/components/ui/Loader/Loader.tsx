@@ -16,6 +16,8 @@ import type { LoaderProps } from './Loader.props';
  * @constructor
  */
 const Loader: FC<LoaderProps> = ({ type, className, mainColor, height }) => {
+  className = cn('text-font-primary', className);
+
   return (
     <>
       {type === 'circle' && (
