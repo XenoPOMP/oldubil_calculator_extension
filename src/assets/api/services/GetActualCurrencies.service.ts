@@ -2,10 +2,10 @@ import axios from 'axios';
 
 import useEnv from '@hooks/useEnv';
 
-export type Currency = 'RUB' | 'TL' | 'USD' | 'KZT' | 'EUR';
+export type Currency = 'RUB' | 'TRY' | 'USD' | 'KZT' | 'EUR';
 
 export interface ActualCurrencyList
-  extends Record<Exclude<Currency, 'RUB' | 'TL'>, number> {}
+  extends Record<Exclude<Currency, 'RUB'>, number> {}
 
 export const GetActualCurrenciesService = {
   async getTodaysCurrencies() {

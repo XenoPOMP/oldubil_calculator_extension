@@ -39,7 +39,7 @@ const ValuteCard: FC<ValuteCardProps> & {
         );
       }
 
-      case 'TL': {
+      case 'TRY': {
         return (
           <>
             <svg

@@ -1,4 +1,5 @@
 import { PropsWith } from '@xenopomp/advanced-types';
+import { roundNumber } from '@xenopomp/advanced-utils';
 
 import cn from 'classnames';
 import { FC, ReactNode, useContext } from 'react';
@@ -15,8 +16,6 @@ import useAppSettings from '@hooks/useAppSettings';
 import { useBankingCommission } from '@hooks/useBankingCommission';
 import { inlineLocaleVar, useLocalization } from '@hooks/useLocalization';
 
-import { roundNumber } from '@utils/math-utils';
-
 import { LIRA_TO_ROUBLE, OLDUBIL_COMMISSION } from '../../../app.constants';
 
 import styles from './InfoPreview.module.scss';
@@ -29,24 +28,34 @@ const InfoPreview: FC<InfoPreviewProps> = ({}) => {
   const russianCurrency = useAppSelector(
     state => state.appSettings.currencies
   ).ru;
+  const turkishCurrency = useAppSelector(
+    state => state.appSettings.currencies
+  ).tl;
   const FETCHED_LIRA_COURSE = useAppSelector(
     state => state.appSettings.fetchedLiraPrice
   );
+  const OFFICIAL_LIRA_COURSE = roundNumber(
+    useAppSelector(state => state.appSettings.officialLiraCurrency) ??
+      LIRA_TO_ROUBLE,
+    2
+  );
 
   const getCommissionWarningString = (): string => {
-    const roundedOverflow = roundNumber(
-      (russianCurrency !== null ? russianCurrency : 1) *
-        (totalCommission / 100),
+    const resultCourse = russianCurrency ?? 0;
+
+    const fromOfficialCourse = roundNumber(
+      OFFICIAL_LIRA_COURSE * (turkishCurrency ?? 0),
       2
     );
 
-    const textOutput = `${roundedOverflow}`;
+    const expression = roundNumber(resultCourse - fromOfficialCourse, 2);
+
+    const textOutput = `${expression}`;
 
     if (/\.\d+$/gi.test(textOutput)) {
-      return `~${roundedOverflow}`;
+      return `~${expression}`;
     }
 
-    // return `${roundedOverflow} (${totalCommission}%)`;
     return textOutput;
   };
 

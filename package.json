@@ -24,6 +24,7 @@
     "@pacote/react-use-outside": "^2.0.1",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/node": "^20.4.1",
+    "@xenopomp/advanced-utils": "^1.1.11",
     "axios": "1.4.0",
     "axios-jwt": "^3.0.2",
     "classnames": "^2.3.2",

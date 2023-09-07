@@ -60,10 +60,10 @@ const ToCurrenciesPage: FC<ToCurrenciesPageProps> = () => {
 
             <ValuteCard nominal={rublesQuantity ?? 0} currency={'RUB'} />
 
-            <ValuteCard nominal={liraQuantity ?? 0} currency={'TL'} />
+            <ValuteCard nominal={liraQuantity ?? 0} currency={'TRY'} />
 
             <ValuteCard
-              nominal={(rublesQuantity ?? 0) / ((fetchedData?.KZT ?? 0) / 100)}
+              nominal={(rublesQuantity ?? 0) / (fetchedData?.KZT ?? 0)}
               currency={'KZT'}
             />
 

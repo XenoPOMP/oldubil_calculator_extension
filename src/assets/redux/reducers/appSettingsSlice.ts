@@ -1,4 +1,5 @@
 import { Defined, RecordKey, RecordValue } from '@xenopomp/advanced-types';
+import { roundNumber } from '@xenopomp/advanced-utils';
 
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -6,7 +7,6 @@ import { CurrencyInputProps } from '@components/CurrencyInput/CurrencyInput.prop
 
 import type { ReduxAction } from '@redux/types';
 
-import { roundNumber } from '@utils/math-utils';
 import { normalizeNumber } from '@utils/normalizeNumber';
 
 import {
@@ -24,6 +24,7 @@ export type AppSettings = {
   language: 'en' | 'ru';
   currencies: Record<CurrencyInputProps['currency'], number | null>;
   fetchedLiraPrice?: number;
+  officialLiraCurrency?: number;
   bankingSystem: 'QIWI' | 'BANK' | 'LAVA';
 };
 
@@ -130,6 +131,13 @@ const appSettingsSlice = createSlice({
       });
     },
 
+    changeOfficialLiraCurrency(
+      state,
+      action: ReduxAction<AppSettings['officialLiraCurrency']>
+    ) {
+      state.officialLiraCurrency = action.payload;
+    },
+
     changeTheme(state, action: ReduxAction<AppSettings['theme']>) {
       state.theme = action.payload;
     }
@@ -142,6 +150,7 @@ export const {
   changeCurrencyCount,
   changeBankingSystem,
   changeFetchedLiraCount,
-  changeTheme
+  changeTheme,
+  changeOfficialLiraCurrency
 } = appSettingsSlice.actions;
 export const initialAppSettings = appSettingsSlice.getInitialState();

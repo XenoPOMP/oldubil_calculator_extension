@@ -1441,6 +1441,13 @@
     react "^18.2.0"
     redux "^4.2.1"
 
+"@xenopomp/advanced-utils@^1.1.11":
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/@xenopomp/advanced-utils/-/advanced-utils-1.1.11.tgz#cfa3cc60a141eee8da15240a90da758a1b09638d"
+  integrity sha512-W82GqHFvb0FEs+S1LWVtn0wvGqAc92i5wJGqYDQIVv3BpDsVDpaQjKthVmzLL82Zp+il51EDZTmd5T+2iQEWtA==
+  dependencies:
+    transliteration "^2.3.5"
+
 abab@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.6.tgz#41b80f2c871d19686216b82309231cfd3cb3d291"
@@ -5672,6 +5679,13 @@ tr46@^4.1.1:
   dependencies:
     punycode "^2.3.0"
 
+transliteration@^2.3.5:
+  version "2.3.5"
+  resolved "https://registry.yarnpkg.com/transliteration/-/transliteration-2.3.5.tgz#8f92309575f69e4a8a525dab4ff705ebcf961c45"
+  integrity sha512-HAGI4Lq4Q9dZ3Utu2phaWgtm3vB6PkLUFqWAScg/UW+1eZ/Tg6Exo4oC0/3VUol/w4BlefLhUUSVBr/9/ZGQOw==
+  dependencies:
+    yargs "^17.5.1"
+
 tree-kill@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.2.tgz#4ca09a9092c88b73a7cdc5e8a01b507b0790a0cc"
@@ -6232,7 +6246,7 @@ yargs@^17.2.1:
     y18n "^5.0.5"
     yargs-parser "^21.1.1"
 
-yargs@^17.7.2:
+yargs@^17.5.1, yargs@^17.7.2:
   version "17.7.2"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-17.7.2.tgz#991df39aca675a192b816e1e0363f9d75d2aa269"
   integrity sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==
