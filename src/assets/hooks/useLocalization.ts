@@ -17,7 +17,8 @@ export const useLocalization = (): Localization => {
       'currencyComparisonPageHeading'
     ),
     currencyOldubilHeading: getChromeLocale('currencyOldubilHeading'),
-    currencyOfficialHeading: getChromeLocale('currencyOfficialHeading')
+    currencyOfficialHeading: getChromeLocale('currencyOfficialHeading'),
+    infoAppVersion: getChromeLocale('infoAppVersion')
   };
 };
 

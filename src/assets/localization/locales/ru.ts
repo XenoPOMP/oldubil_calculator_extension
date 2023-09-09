@@ -49,5 +49,10 @@ export const ru: I18Locales = {
   currencyOfficialHeading: {
     message: 'Официальный курс',
     description: 'Заголовок блока курса центробанка на странице To Currencies.'
+  },
+
+  infoAppVersion: {
+    message: 'Версия приложения&ddt {VERSION}',
+    description: 'Текст рядом с версией приложения в окне Info.'
   }
 };
