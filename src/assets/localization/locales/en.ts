@@ -51,5 +51,10 @@ export const en: I18Locales = {
     message: 'Official course',
     description:
       'The heading of the central banks exchange rate block on the To Currencies page.'
+  },
+
+  infoAppVersion: {
+    message: 'App version&ddt {VERSION}',
+    description: 'The text next to the app version in the Info window.'
   }
 };

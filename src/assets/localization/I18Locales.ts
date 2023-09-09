@@ -16,7 +16,8 @@ export interface I18Locales
     | 'totalCommissionWarning'
     | 'currencyComparisonPageHeading'
     | 'currencyOldubilHeading'
-    | 'currencyOfficialHeading',
+    | 'currencyOfficialHeading'
+    | 'infoAppVersion',
     LocalizationMessage
   > {}
 

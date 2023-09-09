@@ -71,7 +71,7 @@
     "@vitejs/plugin-react": "^4.0.3",
     "@vitest/coverage-c8": "^0.33.0",
     "@vitest/coverage-v8": "^0.33.0",
-    "@xenopomp/advanced-types": "^1.1.1",
+    "@xenopomp/advanced-types": "^1.1.7",
     "autoprefixer": "^10.4.14",
     "chrome-types": "^0.1.218",
     "cloc": "^1.96.0-cloc",
